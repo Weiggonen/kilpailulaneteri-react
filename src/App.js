@@ -30,7 +30,10 @@ function App() {
             <div className="container">
               <ul className="list-unstyled d-flex justify-content-between py-2">
                 <li>
-                  <Link className="text-light text-decoration-none fs-5" to="/">
+                  <Link
+                    className="text-light text-decoration-none fs-5"
+                    to="/kisakalenteri"
+                  >
                     <FaHome />
                   </Link>
                 </li>
@@ -73,7 +76,7 @@ function App() {
                 <li>
                   <Link
                     className="text-light text-decoration-none fs-5 d-flex align-items-center"
-                    to="/"
+                    to="/kisakalenteri"
                   >
                     <FaHome />
                     <span className="ms-1">Etusivu</span>
