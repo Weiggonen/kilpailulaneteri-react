@@ -48,7 +48,7 @@ const Competition = () => {
     .padStart(2, "0")}`;
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 pb-5 mb-5">
       <div className="card">
         <div className="card-header d-flex justify-content-between align-items-center">
           <h2 className="card-title mb-0">{competition.competitionName}</h2>
