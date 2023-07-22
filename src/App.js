@@ -125,7 +125,7 @@ function App() {
               <Route path="/profile/edit" element={<EditProfile />} />
               <Route path="/profile/create" element={<CreateProfile />} />
               <Route path="/search" element={<Search />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/kisakalenteri" element={<Home />} />
               <Route path="/competition/:id" element={<Competition />} />
               <Route path="/competition/signin/:id" element={<SignToComp />} />
               <Route
