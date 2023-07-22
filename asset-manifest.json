@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kisakalenteri/static/css/main.e6a54116.css",
-    "main.js": "/kisakalenteri/static/js/main.e923deb1.js",
+    "main.js": "/kisakalenteri/static/js/main.910dbb6c.js",
     "static/js/787.51a5a9fd.chunk.js": "/kisakalenteri/static/js/787.51a5a9fd.chunk.js",
     "index.html": "/kisakalenteri/index.html",
     "main.e6a54116.css.map": "/kisakalenteri/static/css/main.e6a54116.css.map",
-    "main.e923deb1.js.map": "/kisakalenteri/static/js/main.e923deb1.js.map",
+    "main.910dbb6c.js.map": "/kisakalenteri/static/js/main.910dbb6c.js.map",
     "787.51a5a9fd.chunk.js.map": "/kisakalenteri/static/js/787.51a5a9fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6a54116.css",
-    "static/js/main.e923deb1.js"
+    "static/js/main.910dbb6c.js"
   ]
 }
