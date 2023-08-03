@@ -325,7 +325,7 @@ const SignToComp = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary text-light">
+          <button type="submit" className="btn btn-primary text-light mb-5">
             Ilmoittaudu
           </button>
         </form>

@@ -167,7 +167,7 @@ const Home = () => {
 
   return (
     <div className="container text-nowrap">
-      <h1 className="text-center mt-5">10 seuraavan päivän kilpailut</h1>
+      <h1 className="text-center mt-5">Tulevat kilpailut</h1>
       <div className="table-responsive">
         <table className="table table-striped text-center">
           <thead>

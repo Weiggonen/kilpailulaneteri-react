@@ -26,7 +26,7 @@ function App() {
       <Router>
         <TopBar></TopBar>
         <div style={{ fontFamily: "'Saira', sans-serif" }}>
-          <nav className="bg-info text-light fixed-bottom d-lg-none">
+          <nav className="bg-info text-light fixed-bottom d-lg-none mt-5">
             <div className="container">
               <ul className="list-unstyled d-flex justify-content-between py-2">
                 <li>
@@ -122,7 +122,7 @@ function App() {
             </div>
           </nav>
 
-          <div className="container mt-4">
+          <div className="container mt-4 mb-5">
             <Routes>
               <Route path="/profile" element={<Profile />} />
               <Route path="/profile/edit" element={<EditProfile />} />

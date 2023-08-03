@@ -9,7 +9,7 @@ const TopBar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="me-3 d-none d-lg-block"
+            className="me-3"
             style={{ height: "50px" }}
           />
           <div>
