@@ -18,9 +18,25 @@ const CompSignIns = () => {
     setSignIns(foundSignIns);
   }, [id]);
 
+  // Check if any event has sign-ins
+  const anyEventHasSignIns =
+    competition &&
+    signIns &&
+    Object.keys(competition.categoriesEvents).some((gender) =>
+      competition.categoriesEvents[gender].some((event) => {
+        const eventSignIns = signIns.filter(
+          (signIn) =>
+            signIn.laji === event &&
+            (signIn.sukupuoli === "male" ? "men" : "women") === gender
+        );
+        return eventSignIns.length > 0;
+      })
+    );
+
   return (
     <div>
-      {competition &&
+      {anyEventHasSignIns ? (
+        competition &&
         Object.keys(competition.categoriesEvents).map((gender) =>
           competition.categoriesEvents[gender].map((event) => {
             const eventSignIns = signIns.filter(
@@ -28,37 +44,43 @@ const CompSignIns = () => {
                 signIn.laji === event &&
                 (signIn.sukupuoli === "male" ? "men" : "women") === gender
             );
-            return eventSignIns.length > 0 ? (
-              <div key={event}>
-                <h3>{`${
-                  gender === "men" ? "Miesten" : "Naisten"
-                } ${event}`}</h3>
-                <table className="table table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">Etunimi</th>
-                      <th scope="col">Sukunimi</th>
-                      <th scope="col">Seura</th>
-                      <th scope="col">SB</th>
-                      <th scope="col">PB</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {eventSignIns.map((signIn) => (
-                      <tr key={signIn.etunimi + signIn.sukunimi}>
-                        <td>{signIn.athleteData.etunimi}</td>
-                        <td>{signIn.athleteData.sukunimi}</td>
-                        <td>{signIn.athleteData.seura}</td>
-                        <td>{signIn.athleteData.sb}</td>
-                        <td>{signIn.athleteData.pb}</td>
+            if (eventSignIns.length > 0) {
+              return (
+                <div key={event}>
+                  <h3>{`${
+                    gender === "men" ? "Miesten" : "Naisten"
+                  } ${event}`}</h3>
+                  <table className="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Etunimi</th>
+                        <th scope="col">Sukunimi</th>
+                        <th scope="col">Seura</th>
+                        <th scope="col">SB</th>
+                        <th scope="col">PB</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            ) : null;
+                    </thead>
+                    <tbody>
+                      {eventSignIns.map((signIn) => (
+                        <tr key={signIn.etunimi + signIn.sukunimi}>
+                          <td>{signIn.athleteData.etunimi}</td>
+                          <td>{signIn.athleteData.sukunimi}</td>
+                          <td>{signIn.athleteData.seura}</td>
+                          <td>{signIn.athleteData.sb}</td>
+                          <td>{signIn.athleteData.pb}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+            return null;
           })
-        )}
+        )
+      ) : (
+        <h1>Ei vielä ilmoittautuneita</h1>
+      )}
     </div>
   );
 };
